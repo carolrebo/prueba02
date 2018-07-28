@@ -1,0 +1,2 @@
+class UserTarea < ApplicationRecord
+end
