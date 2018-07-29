@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   #get 'tareas/index'
   resources :tareas, only: :index do
-  	resources :user_tasks, only: [:create, :update]
+  	resources :check, only: [:create, :update]
   end
   resources :check, only: :index
 
