@@ -1,11 +1,22 @@
 <h1>Tareas#index</h1>
 <p>Find me in app/views/tareas/index.html.erb</p>
 
-
-
 <div class="container">
-	<% @tareas.each do |tareas| %>
-	<%= tareas.name %>
-	<%= image_tag tareas.photo %>
+	<div class="row">
+	<% @tareas.each_slice(4) do |row| %>
+	<% row.each do |tareas| %>
+		<div class="col">
+			<div class="card">
+				<%= image_tag tareas.photo, class: 'img-fluid' %>
+				<div class="body">
+				<h5><%= tareas.name %></h5>
+				<%= link_to "Listo",tarea_check_path(tarea),class: 'btn btn-success',method: :post %>
+				</div>
+				
+			</div>	
+		</div>
+		<% end %>
+		<div class="w-100" style="margin-top:20px"> </div>
 	<% end %>
+	</div>
 </div>

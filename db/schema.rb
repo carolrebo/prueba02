@@ -10,20 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_28_003612) do
+ActiveRecord::Schema.define(version: 2018_07_29_222109) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  create_table "checks", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "tarea_id"
+    t.boolean "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tarea_id"], name: "index_checks_on_tarea_id"
+    t.index ["user_id"], name: "index_checks_on_user_id"
+  end
 
   create_table "tareas", force: :cascade do |t|
     t.string "name"
     t.string "photo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_tareas", force: :cascade do |t|
-    t.boolean "estado"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

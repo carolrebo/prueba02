@@ -5,11 +5,12 @@ ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
-# Use postgresql as the database for Active Record
-gem 'devise', git:'https://github.com/plataformatec/devise.git'
-gem 'fake',group: :development
+# Use sqlite3 as the database for Active Record
+gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'faker', group: :development
+
+gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
